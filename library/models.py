@@ -1,32 +1,15 @@
 from django.db import models
 
-Boooks=[
-{"Titre":"un pas à école",
- "ISBN":"234TB",
- "auteur":"gorgee",
- "Edition":"Kamole"},
+class Book(models.Model):
 
+    titre=models.CharField(max_length=255)
+    ISBN=models.CharField(max_length=50, unique=True) 
+    auteur=models.CharField(max_length=67)
+    edition=models.CharField(max_length=65)
+    price=models.FloatField()
+    record_date=models.DateTimeField(auto_now_add=True)
+    update_date=models.DateTimeField(auto_now=True)
 
-{"Titre":"Network", 
-"ISBN":"235YU",
-"auteur":"amdhal",
-"Edition":"kabeka"},
+    def __str__(self):
+        return self.titre
 
-{"Titre":"Dreamer",
- "ISBN":"4NY",
- "auteur":"Isaih",
- "Edition":"from.org"},
-
-{"Titre":"create",
- "ISBN":"40TB",
- "auteur":"gorgee",
- "Edition":"home.fr"}
-]
-user_name=[
-    {"Nom":"makusudi",
-    "Prenom":"Esaie"},
-     {"Nom":"Katoma",
-    "Prenom":"Olivier"},
-]
-
-# Create your models here.

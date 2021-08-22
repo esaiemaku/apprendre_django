@@ -1,41 +1,41 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'library/styles/basic.css' %}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>application web </title>   
+   
 </head>
 <body >
-    <h1 > all books </h1>
-    
-    <p> welcom to our library </p>
-    <table>
-        <tr >
-            <th>Titre </th>
-            <th>ISBN</th>
-            <th>auteur</th>
-            <th>Edition</th>
-        </tr>   
 
-        {% for book in Boooks %}
+    <div class="container">  
+          <h1 > our list of books </h1>
+            
+            <p> welcom to our library </p>
+        <table>
+            <tr >
+                <th>Titre </th>
+                <th>ISBN</th>
+                <th>auteur</th>
+                <th>Edition</th>
+            </tr>   
 
-    <tr style="text-align=center">
-        <td>{{book.Titre}}</td>
-        <td>{{book.ISBN}}</td>
-        <td>{{book.auteur}}</td>
-        <td>{{book.Edition}}</td>
-    </tr>
-    {% endfor%}
+            {% for book in Book %}
 
-    </table>
-        <ul>
-            {% for cute in user_name%}
-            <li>{{cute.Nom}}</li>
-            <li>{{cute.Prenom}}</li>
+                <tr style="text-align=center">
+                    <td>{{book.Titre}}</td>
+                    <td>{{book.ISBN}}</td>
+                    <td>{{book.auteur}}</td>
+                    <td>{{book.Edition}}</td>
+                </tr>
+                {% endfor%}
 
-            {% endfor%}
-        </ul>
+        </table>
+            
+    </dev>
 
 </body>
 </html>

@@ -1,12 +1,13 @@
 
 from django.shortcuts import render
-from .models import Boooks
-from.models import user_name
+from .models import Book
+
 
 def index(request):
+ books=Book.objects.all()
+ 
+ context={ 'Books':Book}
 
-    context={'Boooks':Boooks,'user_name':user_name}
-    return render(request, 'library/index.html',context)
-
+ return render(request, 'library/index.html', context)
 
 # Create your views here.
